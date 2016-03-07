@@ -40,7 +40,11 @@ public abstract class AbstractFragment extends Fragment implements OnClickListen
 	public View setClick(int id){
 		if(view == null) return null;
 		View v = view.findViewById(id);
-		v.setOnClickListener(this);
+		try {
+			v.setOnClickListener(this);
+		}catch (RuntimeException e){
+
+		}
 		return v;
 	}
 	
