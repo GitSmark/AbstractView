@@ -25,7 +25,11 @@ public abstract class AbstractFragmentActivity extends FragmentActivity implemen
 	
 	public View setClick(int id){
 		View view = findViewById(id);
-		view.setOnClickListener(this);
+		try {
+			view.setOnClickListener(this);
+		}catch (RuntimeException e){
+
+		}
 		return view;
 	}
 	
