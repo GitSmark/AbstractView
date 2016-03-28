@@ -48,30 +48,6 @@ public abstract class AbstractFragment extends Fragment implements OnClickListen
 		return v;
 	}
 	
-//	public void setTitle(int id, String text){
-//		try {
-//			TextView tv = (TextView) findViewById(id);
-//			tv.setText(text);
-//		}catch (Exception e){
-//
-//		}
-//	}
-//
-//	public void setFinish(int id){
-//		try {
-//			findViewById(id).setOnClickListener(new OnClickListener() {
-//				@Override
-//				public void onClick(View v) {
-//					BeforeFinish();
-//					finish();
-//				}
-//			});
-//		}catch (Exception e){
-//
-//		}
-//	}
-//
-//	public void BeforeFinish() {}
 	public void BeforeInflate() {}
 	public void getData() {}
 	public void Other() {}
