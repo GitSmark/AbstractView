@@ -16,7 +16,12 @@ Usage
  
 2. Extents `AbstractActivity`, `AbstractFragment`, `AbstractFragmentActivity` according to your need and Add unimplemented methods, then you can write the following code in your java file.
   ```java
-  public class MainActivity extends AbstractFragmentActivity {
+  public class MainActivity extends AbstractActivity {
+  
+  	@Override
+	protected int getLayoutResId() {
+		return R.layout.activity_main;
+	}
 
   	@Override
   	public void initView() {
@@ -25,7 +30,7 @@ Usage
   	}
   
   	@Override
-  	public void onClick(View arg0) {
+  	public void onClick(View v) {
   		// TODO Auto-generated method stub
   		// handle the View.OnClickListener
   	}
@@ -36,11 +41,9 @@ Usage
   public class MainFragment extends AbstractFragment{
 	
   	@Override
-  	public int inflateView() {
-  		// TODO Auto-generated method stub
-  		// InflateView:return your layout resources id
-  		return 0;
-  	}
+	protected int getLayoutResId() {
+		return 0;
+	}
   	
   	@Override
   	public void initView() {
@@ -49,17 +52,26 @@ Usage
   	}
   	
   	@Override
-  	public void onClick(View arg0) {
+  	public void onClick(View v) {
   		// TODO Auto-generated method stub
   		// handle the View.OnClickListener
   	}
   
   }
   ```
-3. Use the following methods according to your need.
- - `BeforeInflate()` 
- - `BeforeCreate()` 
- - `AfterCreate()`
+3. Use the following methods to initView and setClick().
+ - `$find(Resid)` 
+ - `$find(v, Resid)` 
+ - `$click(Resid)`
+ - `$click(v, Resid)` 
+ - `$onClick(Resid, listener)`
+ - `$onClick(v, Resid, listener)`
+ - `$Title(Resid, text)`
+ - `$Finish(Resid)`
+
+4. Use the following methods according to your need.
+ - `beforeInitView()` 
+ - `beforeFinish()` 
  - `getData()`
  - `Other()`
 
@@ -69,7 +81,7 @@ Customization
   
 Sample
 ----------
-  There is also a [sample](https://github.com/GitSmark/AbstractView/blob/master/AbstractViewSample.rar) to get you started.
+  There is also a [sample](https://github.com/GitSmark/AbstractView/blob/master/AbstractViewSample.zip) to get you started.
 
 Contact
 --------
